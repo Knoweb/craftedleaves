@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@layer base {
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --color-forest-950: #0D1E12;
+  --color-forest-900: #142F1C;
+  --color-forest-800: #1C4328;
+  --color-forest-700: #255835;
+  --color-forest-600: #327346;
+  --color-forest-500: #44925B;
+
+  --color-gold-600: #A8811A;
+  --color-gold-500: #C59B27;
+  --color-gold-400: #D8AF3E;
+  --color-gold-300: #E6C568;
+  --color-gold-100: #FAF2DA;
+
+  --color-spice-700: #743820;
+  --color-spice-600: #934928;
+  --color-spice-500: #B25D34;
+  --color-spice-100: #F7EDE6;
+
+  --color-parchment-50: #FCFAF7;
+  --color-parchment-100: #F7F3EB;
+  --color-parchment-200: #EFE8DC;
+  --color-parchment-300: #E2D7C3;
+  --color-parchment-400: #CBBFA8;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4EFE6;
+}
+::-webkit-scrollbar-thumb {
+  background: #C59B27;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1C4328;
+}
+
+/* Luxury Card Glass / Border effects */
+.luxury-border {
+  border: 1px solid rgba(197, 155, 39, 0.25);
+}
+
+.luxury-border-dark {
+  border: 1px solid rgba(197, 155, 39, 0.15);
+}
+
+.luxury-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(226, 215, 195, 0.7);
+  box-shadow: 0 4px 20px -2px rgba(20, 47, 28, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -4px rgba(20, 47, 28, 0.12);
+  border-color: rgba(197, 155, 39, 0.5);
+}
+
+/* Subtle botanical textured background pattern */
+.bg-botanical-pattern {
+  background-color: #FCFAF7;
+  background-image: radial-gradient(rgba(45, 90, 52, 0.04) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+.bg-dark-pattern {
+  background-color: #102416;
+  background-image: radial-gradient(rgba(216, 175, 62, 0.06) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
