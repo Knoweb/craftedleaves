@@ -39,3 +39,4 @@ jobs:
             chown -R $OWNER /home/craftedleaves.com/public_html/
             chmod -R 755 /home/craftedleaves.com/public_html/
             systemctl restart lsws
+

@@ -23,5 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 
-# Temporary extraction files
+# Temporary extraction files & archives
 extracted_images/
+*.zip
+
