@@ -12,7 +12,7 @@ export const fallbackArticles = [
     category: 'tea-craft',
     categoryLabel: 'Tea Craft',
     excerpt: 'Tea is one of the world’s most widely enjoyed non-alcoholic beverages, consumed in more than two billion cups each day. Sri Lankan tea, widely known as Ceylon Tea, offers a distinctive expression shaped by sharply varied elevations, climates, and generational manufacturing craft.',
-    coverImage: '/blog-assets/james-taylor-loolecondera.jpg',
+    coverImage: '/blog-assets/ceylon-mountain-terraces.jpg',
     readTime: '9 min read',
     publishedDate: 'November 16, 2026',
     author: {
