@@ -46,7 +46,7 @@ export default function BlogPage({ onSelectArticle, onNavigateToContact }) {
     <div className="space-y-0 bg-[#FCFAF7]">
       
       {/* Botanical Luxury Editorial Header */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#F7F3EB] via-[#FAF7F0] to-[#FCFAF7] py-14 sm:py-20 lg:py-24 border-b border-[#E2D7C3]/80 text-center">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#F7F3EB] via-[#FAF7F0] to-[#FCFAF7] py-14 sm:py-20 lg:py-24 text-center">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(197,155,39,0.08)_0%,_transparent_65%)] pointer-events-none" />
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
@@ -67,8 +67,6 @@ export default function BlogPage({ onSelectArticle, onNavigateToContact }) {
             Immerse yourself in authentic perspectives on traditional seedling harvesting, true Ceylon cinnamon cultivation, water chemistry, and the biodiversity of the UNESCO Sinharaja border.
           </p>
 
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#C59B27] to-transparent mx-auto mt-4" />
-
           {/* CMS Connection Indicator */}
           <div className="pt-2 flex items-center justify-center">
             {isLiveStrapi ? (
@@ -87,17 +85,17 @@ export default function BlogPage({ onSelectArticle, onNavigateToContact }) {
       </section>
 
       {/* Filter Tabs & Search Bar */}
-      <section className="sticky top-16 z-30 bg-[#FCFAF7]/95 backdrop-blur-md py-4 border-b border-[#E2D7C3]/60 shadow-xs">
+      <section className="sticky top-16 z-30 bg-[#FCFAF7]/95 backdrop-blur-md py-3.5 sm:py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
             
-            {/* Category Filter Pills */}
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-1.5 sm:gap-2 w-full md:w-auto">
+            {/* Category Filter Pills - Clean, unified single row */}
+            <div className="flex items-center gap-2">
               {blogCategories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategory(cat.id)}
-                  className={`px-3.5 sm:px-4.5 py-1.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                  className={`px-4 sm:px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer whitespace-nowrap ${
                     selectedCategory === cat.id
                       ? 'bg-[#142F1C] text-[#FAF2DA] shadow-md border border-[#C59B27]/40 scale-102'
                       : 'bg-white text-[#4C554D] hover:text-[#142F1C] hover:bg-[#EFE8DC] border border-[#E2D7C3]'
@@ -109,13 +107,13 @@ export default function BlogPage({ onSelectArticle, onNavigateToContact }) {
             </div>
 
             {/* Instant Search Bar */}
-            <div className="relative w-full md:w-72">
+            <div className="relative w-full sm:w-72">
               <Search className="w-4 h-4 text-[#8B6810] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search blogs, spices, tea..."
+                placeholder="Search blogs, tea..."
                 className="w-full pl-9 pr-4 py-2 text-xs sm:text-sm rounded-full bg-white border border-[#E2D7C3] focus:border-[#C59B27] focus:outline-none shadow-xs text-[#142F1C] placeholder-[#8A958C]"
               />
               {searchQuery && (
@@ -133,8 +131,8 @@ export default function BlogPage({ onSelectArticle, onNavigateToContact }) {
       </section>
 
       {/* Main Content Area */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-[#FCFAF7]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+      <section className="py-12 sm:py-16 bg-[#FCFAF7]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           {loading ? (
             <div className="py-20 text-center space-y-3">
@@ -159,135 +157,70 @@ export default function BlogPage({ onSelectArticle, onNavigateToContact }) {
               </button>
             </div>
           ) : (
-            <>
-              {/* Featured Hero Blog Card */}
-              {featuredArticle && !searchQuery && selectedCategory === 'all' && (
-                <div 
-                  onClick={() => onSelectArticle(featuredArticle.slug)}
-                  className="group relative bg-white rounded-3xl overflow-hidden border-2 border-[#E2D7C3] hover:border-[#C59B27]/80 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer grid grid-cols-1 lg:grid-cols-12"
+            <div className={`grid gap-6 sm:gap-8 ${
+              articles.length === 1 ? 'max-w-2xl mx-auto' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+            }`}>
+              {articles.map((article) => (
+                <article
+                  key={article.id}
+                  onClick={() => onSelectArticle(article.slug)}
+                  className="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E2D7C3] hover:border-[#C59B27]/70 shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer flex flex-col justify-between hover:-translate-y-1.5"
                 >
-                  {/* Left Visual Banner */}
-                  <div className="lg:col-span-7 relative h-72 sm:h-96 lg:h-auto overflow-hidden bg-[#142F1C]">
-                    <img
-                      src={featuredArticle.coverImage}
-                      alt={featuredArticle.title}
-                      className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent lg:hidden" />
-                    <span className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-[#142F1C] text-[#F3CE65] border border-[#C59B27]/50 shadow-md">
-                      <Sparkles className="w-3 h-3" />
-                      <span>Featured Blog</span>
-                    </span>
-                  </div>
+                  <div>
+                    {/* Cover Photo */}
+                    <div className="relative h-56 sm:h-64 w-full overflow-hidden bg-[#FAF8F3]">
+                      <img
+                        src={article.coverImage}
+                        alt={article.title}
+                        className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-700 ease-out"
+                      />
+                      <div className="absolute top-3 left-3 bg-[#142F1C]/90 backdrop-blur-xs text-[#FAF2DA] text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-[#C59B27]/40 shadow-xs">
+                        {article.categoryLabel}
+                      </div>
+                    </div>
 
-                  {/* Right Story Details */}
-                  <div className="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between space-y-4">
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-3 text-xs text-[#8B6810] font-semibold">
-                        <span className="uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#C59B27]/12 text-[#84630D]">
-                          {featuredArticle.categoryLabel}
-                        </span>
+                    {/* Content */}
+                    <div className="p-6 sm:p-7 space-y-3">
+                      <div className="flex items-center gap-3 text-xs text-[#8A958C]">
                         <span className="flex items-center gap-1">
-                          <Clock className="w-3.5 h-3.5" />
-                          <span>{featuredArticle.readTime}</span>
+                          <Clock className="w-3.5 h-3.5 text-[#C59B27]" />
+                          <span>{article.readTime}</span>
                         </span>
+                        <span>•</span>
+                        <span>{article.publishedDate}</span>
                       </div>
 
-                      <h2 className="font-serif text-2xl sm:text-3xl lg:text-3xl font-bold text-[#142F1C] leading-snug group-hover:text-[#255835] transition-colors">
-                        {featuredArticle.title}
-                      </h2>
+                      <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#142F1C] leading-snug group-hover:text-[#255835] transition-colors line-clamp-2">
+                        {article.title}
+                      </h3>
 
                       <p className="text-xs sm:text-sm text-[#4C554D] leading-relaxed line-clamp-3">
-                        {featuredArticle.excerpt}
+                        {article.excerpt}
                       </p>
                     </div>
-
-                    <div className="pt-4 border-t border-[#F0E8DC] flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <img
-                          src={featuredArticle.author.avatar}
-                          alt={featuredArticle.author.name}
-                          className="w-9 h-9 rounded-full object-cover border border-[#C59B27]/50"
-                        />
-                        <div>
-                          <span className="block text-xs font-bold text-[#142F1C]">{featuredArticle.author.name}</span>
-                          <span className="block text-[10px] text-[#8A958C]">{featuredArticle.publishedDate}</span>
-                        </div>
-                      </div>
-
-                      <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#C59B27] group-hover:text-[#142F1C] transition-colors">
-                        <span>Read</span>
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </div>
                   </div>
-                </div>
-              )}
 
-              {/* Grid of Remaining Articles */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                {(searchQuery || selectedCategory !== 'all' ? articles : gridArticles).map((article) => (
-                  <article
-                    key={article.id}
-                    onClick={() => onSelectArticle(article.slug)}
-                    className="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E2D7C3] hover:border-[#C59B27]/70 shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer flex flex-col justify-between hover:-translate-y-1.5"
-                  >
-                    <div>
-                      {/* Cover Photo */}
-                      <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-[#FAF8F3]">
-                        <img
-                          src={article.coverImage}
-                          alt={article.title}
-                          className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
-                        />
-                        <div className="absolute top-3 left-3 bg-[#142F1C]/90 backdrop-blur-xs text-[#FAF2DA] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-[#C59B27]/40 shadow-xs">
-                          {article.categoryLabel}
-                        </div>
-                      </div>
-
-                      {/* Content */}
-                      <div className="p-5 sm:p-6 space-y-2.5">
-                        <div className="flex items-center gap-3 text-[11px] text-[#8A958C]">
-                          <span className="flex items-center gap-1">
-                            <Clock className="w-3 h-3 text-[#C59B27]" />
-                            <span>{article.readTime}</span>
-                          </span>
-                          <span>•</span>
-                          <span>{article.publishedDate}</span>
-                        </div>
-
-                        <h3 className="font-serif text-lg sm:text-xl font-bold text-[#142F1C] leading-snug group-hover:text-[#255835] transition-colors line-clamp-2">
-                          {article.title}
-                        </h3>
-
-                        <p className="text-xs text-[#4C554D] leading-relaxed line-clamp-3">
-                          {article.excerpt}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Bottom Author & Read Link */}
-                    <div className="px-5 sm:px-6 pb-5 pt-3 border-t border-[#F0E8DC] flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <img
-                          src={article.author.avatar}
-                          alt={article.author.name}
-                          className="w-7 h-7 rounded-full object-cover border border-[#C59B27]/40"
-                        />
-                        <span className="text-[11px] font-semibold text-[#142F1C] truncate max-w-[120px]">
-                          {article.author.name}
-                        </span>
-                      </div>
-
-                      <span className="inline-flex items-center gap-1 text-xs font-bold text-[#C59B27] group-hover:text-[#142F1C] transition-colors">
-                        <span>Read</span>
-                        <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                  {/* Bottom Author & Read Link */}
+                  <div className="px-6 sm:px-7 pb-6 pt-3 border-t border-[#F0E8DC] flex items-center justify-between">
+                    <div className="flex items-center gap-2.5">
+                      <img
+                        src={article.author.avatar}
+                        alt={article.author.name}
+                        className="w-8 h-8 rounded-full object-cover border border-[#C59B27]/40"
+                      />
+                      <span className="text-xs font-semibold text-[#142F1C]">
+                        {article.author.name}
                       </span>
                     </div>
-                  </article>
-                ))}
-              </div>
-            </>
+
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#C59B27] group-hover:text-[#142F1C] transition-colors">
+                      <span>Read Article</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+                </article>
+              ))}
+            </div>
           )}
 
           {/* Bottom Journal Callout & Partnership Invitation */}

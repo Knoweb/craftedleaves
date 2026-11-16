@@ -1,287 +1,170 @@
 // Authentic blog & journal articles reflecting Crafted Leaves artisanal heritage
 export const blogCategories = [
-  { id: 'all', label: 'All Stories' },
-  { id: 'tea-craft', label: 'Artisanal Tea Craft' },
-  { id: 'cinnamon-spices', label: 'Ceylon Cinnamon & Spices' },
-  { id: 'terroir', label: 'Terroir & Sinharaja' },
-  { id: 'brewing', label: 'Master Brewing Guides' }
+  { id: 'all', label: 'All Blogs' },
+  { id: 'tea-craft', label: 'Tea Craft' }
 ];
 
 export const fallbackArticles = [
   {
-    id: 1,
-    slug: 'the-art-of-handcrafted-ceylon-tea-150-year-heritage',
-    title: 'The Art of Handcrafted Ceylon Tea: A 150-Year Heritage from Southern Sri Lanka',
+    id: 101,
+    slug: 'from-china-to-ceylon-how-sri-lankas-craft-shapes-ceylon-tea',
+    title: 'From China to Ceylon, How Sri Lanka’s Craft Shapes Ceylon Tea',
     category: 'tea-craft',
-    categoryLabel: 'Artisanal Tea Craft',
-    excerpt: 'Explore the meticulous traditional methods of harvesting inbred seedling tea leaves, artisanal hand-rolling, and small-batch charcoal firing that preserve Ceylon tea’s timeless soul.',
-    coverImage: '/images/tea-harvest.jpg',
-    readTime: '6 min read',
-    publishedDate: 'November 12, 2026',
+    categoryLabel: 'Tea Craft',
+    excerpt: 'Tea is one of the world’s most widely enjoyed non-alcoholic beverages, consumed in more than two billion cups each day. Sri Lankan tea, widely known as Ceylon Tea, offers a distinctive expression shaped by sharply varied elevations, climates, and generational manufacturing craft.',
+    coverImage: '/blog-assets/james-taylor-loolecondera.jpg',
+    readTime: '9 min read',
+    publishedDate: 'November 16, 2026',
     author: {
-      name: 'Bataganvila Master Craftsman',
+      name: 'Crafted Leaves Master Craftsman',
       role: 'Head of Tea Heritage, Crafted Leaves',
       avatar: '/images/hero-hand-leaf.jpg'
     },
     featured: true,
-    tags: ['Artisanal Tea', 'Seedling Leaves', 'Southern Sri Lanka', 'Tradition'],
-    content: `
-### The Soul of Traditional Seedling Tea
+    tags: ['Ceylon Tea', 'Origins', 'James Taylor', 'Orthodox Craft', 'Tea Regions'],
+    content: `Tea is one of the world’s most widely enjoyed non-alcoholic beverages, consumed in more than two billion cups each day. Its importance extends far beyond refreshment: tea carries historical, cultural, economic and social significance, while its quality is shaped by the interaction of plant material, environment and manufacturing skill. Sri Lankan tea, widely known as Ceylon Tea, offers a particularly clear example of this relationship because its distinctive products arise from sharply varied elevations, climates and leaf characteristics within a relatively small island.
 
-In the lush valleys of Southern Sri Lanka, where the coastal mist meets the southern perimeter of the Sinharaja rainforest, tea making is not a mechanical assembly line. It is an ancient sensory dialogue between the master craftsman and the newly sprouted green leaf.
+## 1. Origins and Global Spread of Tea
 
-Unlike modern commercial clone plantations that produce homogenized, high-yield leaves for industrial CTC teabags, Crafted Leaves is dedicated to cultivating and harvesting **traditional inbred seedling bushes**. These deep-rooted legacy tea trees dig their taproots meters down into ancient mineral strata, creating a complex, nuanced liquor that changes character with every season.
+![right: In 2737 BC, Shen Nung, the second emperor of China, discovered tea when leaves blew into his pot of boiling water.](/blog-assets/shen-nung-legend.jpg)
 
-> "A machine can harvest quantity, but only the gentle, intuitive touch of skilled southern artisans can identify the exact golden moment when two leaves and a bud hold their peak essential oil concentration."
+According to an ancient Chinese legend, tea was discovered around 2737 BCE by Shen Nung, the second emperor of China. While resting with a cup of boiling water, leaves from a nearby tree reportedly fell into his drink. He tasted the infusion, appreciated its flavour and found it relieving, creating the legend that links tea drinking to its earliest origins. The use of tea has a history stretching back thousands of years, and China, particularly its southwestern region is widely associated with tea’s origins. The presence of large wild tea trees in this area is cited as evidence of its long-standing connection with the tea plant.
 
----
+From its historical roots in China, tea gradually travelled far beyond Asia. The Portuguese Jesuit missionary Father Jasper de Cruz was among the first Europeans to experience and write about tea in 1560. In 1610, the Dutch East India Company delivered an initial shipment of Chinese tea to Europe, and the English East India Company later brought Chinese tea to the London market in 1669. Tea was introduced in London as a beverage associated with health and refinement, with Garway’s Coffee House serving it in 1657.
 
-### Step 1: Dawn Hand-Plucking
+The expansion of tea consumption in Britain during the seventeenth century brought major social change. Tea increasingly replaced beverages such as milk in everyday life and encouraged new forms of social etiquette. Over time, tea became deeply embedded in British domestic culture, trade and imperial economic activity. Companies such as Twinings, founded in England in 1706, helped establish the commercial importance of tea blending and trading. By 1870, blending was being used to produce more consistent tea products.
 
-The journey of every cup begins before the tropical sun burns off the canopy dew. Artisans—whose families have perfected this craft across four generations—walk the terraced gardens hand-selecting only the tender terminal bud and the two adjacent leaves (*"Two Leaves and a Bud"*). 
+The history of tea also includes important developments in forms of preparation and consumption. Iced tea was introduced by Richard Blechynden at the St. Louis World Fair in 1904 during exceptionally hot weather. Tea bags emerged accidentally in 1908, when New York tea importer Thomas Sullivan sent tea samples in small silk bags that customers steeped directly in hot water.
 
-Leaves harvested at dawn retain maximum polyphenol density and delicate floral volatiles that would otherwise dissipate under midday warmth.
+Tea cultivation spread through Asia and later to other parts of the world. Seeds were introduced to Japan around 800 AD, and tea agriculture had become established there by the thirteenth century. Chinese immigrants introduced tea cultivation to Taiwan in 1810, while the Dutch brought Japanese seed and workers to Java in 1826. Tea cultivation expanded in India and Ceylon under British influence during the nineteenth century, initially using Chinese seed and later Assam plant material. By the late nineteenth and early twentieth centuries, tea was also cultivated in parts of Africa, South America, Australia, Russia, Sumatra and Iran. In *The Classic of Tea Demystified*, Cheng Qikun notes that tea is grown in more than 60 countries across five continents, and the area devoted to tea cultivation has steadily increased as global consumption has grown.
 
----
+## 2. The Rise of Ceylon Tea
 
-### Step 2: Gentle Ambient Withering
+![right: Loolecondera Tea Garden - First commercial tea plantation of Sri Lanka planted by Mr. James Taylor in 1867.](/blog-assets/james-taylor-loolecondera.jpg)
 
-Once harvested, the fragile green leaves are laid across elevated bamboo and natural timber racks. For 12 to 18 hours, natural cross-breezes carrying the salt-tinged southern air reduce moisture content by roughly 50%. The leaves soften, becoming pliable and releasing an aroma reminiscent of ripe tropical fruit and wildflowers.
+Tea is not indigenous to Sri Lanka. It was introduced during British colonial rule, when the country was known as Ceylon. Experimental planting began as early as 1824 with seed from China and again in 1839 with seed brought from India, but commercial cultivation began in 1867.
 
----
+James Taylor, a Scottish planter, established the first commercial tea plantation on an experimental basis at Loolecondera near Kandy. His contribution to the development of Ceylon Tea earned him recognition as the father of Sri Lanka’s tea industry. At the time, coffee was the dominant plantation crop. However, coffee rust disease severely damaged coffee estates in the late 1860s. British planters turned increasingly towards tea, and by the 1890s nearly all coffee plantations had been converted to tea cultivation.
 
-### Step 3: Artisanal Hand-Rolling & Bruising
+The historical development of Sri Lanka’s tea sector may be understood in three phases. The first, from 1867 until the nationalization of estates in 1971–75, involved the establishment and growth of the industry under British influence and later after independence. The second phase, from 1971–75 to 1992, was characterized by government control. The third phase began in 1992, when the private sector became actively involved in managing state-owned tea plantations.
 
-Unlike high-speed industrial rollers that crush and pulverize plant cells, artisanal hand-rolling is an art of gentle pressure:
+For much of the colonial period and for almost three decades after independence, tea was the mainstay of Sri Lanka’s economy. Although industrial and service sectors later expanded and reduced tea’s relative importance, the industry continued to play a major role in employment, foreign-exchange earnings and rural development. Tea directly and indirectly supported more than one million people and historically served as the country’s principal export until apparel surpassed it in the 1980s.
 
-* **Leaf Integrity:** The cellular walls are ruptured softly to expose essential enzymes without shredding the delicate leaf veins.
-* **Twist Architecture:** Each leaf is twisted into graceful, wiry needles (*FBOP* and *Pekoe* shapes) that slowly unfurl during brewing.
-* **Controlled Oxidation:** The craftsman continuously feels the warmth and monitors the aroma shift from fresh grass to sweet honey and dark cocoa.
+## 3. Sri Lanka’s Tea Regions
 
----
+Sri Lanka produces tea throughout the year in its central highlands and southern foothills. Tea is grown on sloping land under cool and pleasant subtropical conditions, across 14 districts in the Western, Central, Southern, Northwestern, Uva and Sabaragamuwa provinces. Major producing districts include Nuwara Eliya, Ratnapura, Badulla, Galle, Matara and Kandy.
 
-### Step 4: Small-Batch Firing & Preservation
+The Sri Lanka Tea Board broadly classifies tea-growing regions according to elevation:
 
-To arrest oxidation at its crescendo, the curled leaves are gently fired over indirect, low-heat ovens. This locks in the natural amber liquor and ensures the tea will retain its vibrant aromatics across international voyages without artificial additives or preservatives.
-
-More than a beverage, every cup represents a connection to the heritage, resilience, and unhurried craftsmanship of Ceylon.
-`
-  },
-  {
-    id: 2,
-    slug: 'true-ceylon-cinnamon-c5-vs-cassia-health-wellness',
-    title: 'True Ceylon Cinnamon (C5 Grade) vs Cassia: Why Origin and Purity Matter',
-    category: 'cinnamon-spices',
-    categoryLabel: 'Ceylon Cinnamon & Spices',
-    excerpt: 'Delve into the differences between authentic sweet Ceylon Cinnamon (Cinnamomum verum) and pungent Cassia, and why our handcrafted C5 quills represent the gold standard of purity.',
-    coverImage: '/images/cinnamon-c5.jpg',
-    readTime: '5 min read',
-    publishedDate: 'November 8, 2026',
-    author: {
-      name: 'Dr. Priyantha Jayasuriya',
-      role: 'Agricultural Botanist & Spice Researcher',
-      avatar: '/images/spice-tea-trio-jars.jpg'
-    },
-    featured: false,
-    tags: ['Ceylon Cinnamon', 'C5 Quills', 'Wellness', 'Spices'],
-    content: `
-### Understanding the "True Cinnamon" Difference
-
-Across global spice markets, the word "Cinnamon" is frequently applied to two completely distinct plants with drastically different chemical profiles, flavors, and health considerations:
-
-1. **True Ceylon Cinnamon (*Cinnamomum verum* or *Cinnamomum zeylanicum*):** Indigenous exclusively to the tropical soils of Southern Sri Lanka.
-2. **Cassia (*Cinnamomum cassia*):** A thicker, coarser bark imported predominantly from East Asia.
-
----
-
-### The Coumarin Factor: A Health Imperative
-
-The most vital distinction between Ceylon Cinnamon and Cassia lies in a naturally occurring aromatic compound called **coumarin**.
-
-| Attribute | True Ceylon Cinnamon (C5) | Common Cassia Bark |
+| Category | Elevation | General Character |
 | :--- | :--- | :--- |
-| **Coumarin Content** | Trace levels (< 0.004%) | High levels (up to 1.0%) |
-| **Texture & Layers** | Fragile, paper-thin, soft parchment layers | Thick, rigid single-layer hollow bark |
-| **Flavor Profile** | Subtly sweet, floral, delicate, warming | Pungent, harsh, overpowering, bitter finish |
-| **Culinary Versatility** | Perfect for fine teas, patisserie, and medicine | Used mainly in industrial savory mixes |
+| **High-grown tea** | Above 1,200 metres | Associated with distinctive high-grown quality and cooler conditions |
+| **Medium-grown tea** | 600–1,200 metres | Often occupies an intermediate position between high and low regions |
+| **Low-grown tea** | Sea level to 600 metres | Known for fuller colour, juicy leaf and strong appearance |
 
-Because coumarin can cause liver and kidney toxicity when consumed regularly in moderate doses, health authorities throughout Europe and North America strongly recommend True Ceylon Cinnamon for daily wellness, tea infusions, and dietary supplements.
+![right: Sri Lanka Agro-Climatic Tea Growing Regions across Central & Southern Foothills](/blog-assets/ceylon-tea-regions-map.jpg)
 
----
+Elevation is one of the major influences on tea quality because it operates together with temperature, rainfall, wind, sunshine, seasonal variation and local growing conditions. These factors affect plant growth and, more importantly, the inherent properties of the leaf before it is plucked.
 
-### Handcrafting the Elpitiya C5 Quill
+High-grown teas possess a quality associated with higher elevations that cannot be fully reproduced in the low country. Even when low-grown leaf is manufactured under more favourable higher-elevation conditions, the coarse character of low-country tea remains, and the subtle quality of high-grown tea is absent. This demonstrates that tea quality is not simply created in the factory, it begins in the field.
 
-At the Crafted Leaves processing facility in Elpitiya, cinnamon peeling remains a traditional art form passed down through lineage:
+![right: Distinctive Tea Liquor Colours across Sri Lanka's Agro-Climatic Terroirs](/blog-assets/ceylon-tea-liquor-colors.jpg)
 
-* The outer rough bark is delicately scraped away with brass scrapers.
-* The paper-thin inner bark is meticulously removed in long, supple ribbons.
-* Master peelers roll dozens of these parchment-like layers together into a single, tightly packed cigar quill known as **C5 Special**.
-* The quills are naturally dried under indirect tropical shade, turning a distinctive golden-tan patina.
+Low-country conditions tend to produce more colour in tea liquor. Low-grown leaf is often juicier and produces made tea with a darker, blacker appearance. High-grown leaf, by contrast, tends to be tougher, less juicy and more resistant to cell disruption during rolling. These natural differences affect both the appearance of the manufactured tea and the character of the brewed liquor.
 
-When you brew Crafted Leaves Ceylon Cinnamon with our artisanal teas, you taste sweet elegance without bitterness—pure nature in balance.
-`
-  },
-  {
-    id: 3,
-    slug: 'the-five-liquors-of-ceylon-sensory-tasting-guide',
-    title: 'The Five Liquors of Ceylon: A Sensory Tasting Journey Across Leaf Terroirs',
-    category: 'tea-craft',
-    categoryLabel: 'Artisanal Tea Craft',
-    excerpt: 'Discover how leaf grading, gentle oxidation, and seedling terroir yield the full spectrum of Ceylon tea—from celestial Silver Tips to robust Southern Dark Reserves.',
-    coverImage: '/images/artisanal-tea-brew-cup.jpg',
-    readTime: '7 min read',
-    publishedDate: 'November 3, 2026',
-    author: {
-      name: 'Crafted Leaves Cupping Panel',
-      role: 'Master Tea Tasters & Sommeliers',
-      avatar: '/images/hero-plantation-valley.jpg'
-    },
-    featured: false,
-    tags: ['Tasting Notes', 'Five Liquors', 'Silver Tips', 'FBOP', 'Tea Cupping'],
-    content: `
-### Beyond the Single Flavor Paradigm
+## 4. Tea Leaf and Manufacture
 
-In conventional commercial markets, black tea is often treated as a uniform commodity. Yet, authentic handmade Ceylon tea possesses a sensory spectrum as rich and nuanced as vintage single-estate wines.
+Tea manufacture requires skill because full standardization is impossible. Mechanical and chemical control can improve consistency, but weather, growth conditions and the changing condition of green leaf will always influence the final product. Regardless of the factory method used, many important tea characteristics arise from the properties of the green leaf itself.
 
-At Crafted Leaves, we celebrate **The Five Liquors of Ceylon**—a curated visual and palate progression demonstrating how artisanal harvesting and micro-climates transform the same Camellia sinensis leaf into five extraordinary expressions:
+The main features by which tea is judged in the market include appearance, colour, strength, pungency, quality, flavour and infusion. A successful manufacturer must therefore understand the relationship between leaf type, district, elevation and processing method rather than apply one uniform method to all teas.
 
----
+Dominant liquor characteristics, such as “greenness” and “maltiness,” arise largely from the intrinsic nature of the leaf. Such features were once attributed mainly to peculiarities of factory manufacture, but many unusual characteristics begin in the leaf long before plucking. Factory operations can preserve, develop or damage these qualities, but they cannot completely create qualities that climate and leaf material do not provide.
 
-### 1. Pure Silver Tips: The Celestial White Nectar
-* **Visual:** Pale, shimmering champagne with silvery trichome sheen.
-* **Aroma:** Fresh night-blooming jasmine, honeydew melon, and sweet spring meadow.
-* **Palate:** Silky, velvet texture with delicate honey sweetness and zero astringency.
-* **The Craft:** Hand-plucked exclusively from unopened velvet buds during the dry southern solstice.
+This principle is particularly important in Sri Lanka. A manufacturing practice designed to preserve delicate high-grown flavour may not be suitable for low-country tea. Conversely, methods intended to preserve the prized black appearance and tip of low-grown tea may be unsuitable for high-grown leaf. Manufacturing must match the inherent potential of the raw material.
 
----
+## 5. The Orthodox Manufacturing Process
 
-### 2. Golden Pekoe: The Harmonious Balance
-* **Visual:** Luminous apricot-gold with clear crystal clarity.
-* **Aroma:** Toasted almonds, sun-ripened apricots, and light caramel.
-* **Palate:** Crisp and refreshing with a rounded body and a lingering peach finish.
-* **The Craft:** Produced from small-leaf tender curls rolled gently to preserve delicate citrus nuances.
+Sri Lanka’s tea cultivators and manufacturers are the custodians of the traditional, orthodox method of black tea production. This method is still widely regarded by experts as producing the finest black tea. Although technology has advanced over the last half century, the orthodox process remains relatively slow and labour-intensive. As Sri Lankan planters and traders have long maintained, good tea cannot be hurried, nor can it be delayed. Each stage must be carefully timed according to the moisture content of the plucked leaf, prevailing temperature and humidity, and other variable factors. Success depends on the tea-maker’s judgment, experience and intuitive feel for the process.
 
----
+### 5.1 Plucking and Weighing
 
-### 3. Flowery Broken Orange Pekoe (FBOP): The Jewel of the South
-* **Visual:** Vibrant orange-amber with golden leaf tips scattered throughout.
-* **Aroma:** Wild mountain honey, dried raisins, and sweet floral musk.
-* **Palate:** Full-bodied, assertive yet exceptionally smooth, with a malty backbone.
-* **The Craft:** Southern Sri Lanka’s hallmark artisanal cut, renowned for its quick infusion and balanced strength.
+![right: TWO LEAVES AND A BUD - Uppermost foliage selected during plucking](/blog-assets/two-leaves-and-a-bud.jpg)
 
----
+The manufacturing process begins with plucking. Only the uppermost foliage on each stem is selected, typically the “two leaves and a bud,” while the stem itself must remain undamaged. This delicate work is carried out mainly by women, and a skilled plucker can collect up to 20 kg of leaf in a day.
 
-### 4. Artisanal Fruit & Spice Infusion: The Tropical Harmony
-* **Visual:** Deep ruby-red with warm garnet reflections.
-* **Aroma:** Ripe southern passionfruit, cinnamon bark, and fresh strawberry zest.
-* **Palate:** Naturally sweet and lively with a bright, crisp finish that delights both hot and over ice.
-* **The Craft:** Premium artisanal seedling tea harmonized with real dried botanicals and pure essential oils.
+On arrival at the factory, the raw leaf is weighed. The total weight recorded for the day’s batch provides a benchmark for assessing quality at the end of manufacture. After weighing, the tea is spread out for withering.
 
----
+### 5.2 Withering
 
-### 5. Southern Heritage Dark Reserve: The Earthy Depth
-* **Visual:** Deep mahogany-bronze with dense liquor viscosity.
-* **Aroma:** Dark chocolate, woodsmoke, cured leather, and rich date molasses.
-* **Palate:** Bold, comforting, deeply grounding with long-lasting malty warmth.
-* **The Craft:** Harvested from mature heritage bushes grown in iron-rich low-country soils, fired over seasoned tamarind wood.
-`
-  },
-  {
-    id: 4,
-    slug: 'sinharaja-terroir-how-unesco-rainforest-microclimate-shapes-tea',
-    title: 'The Sinharaja Terroir: How UNESCO Rainforest Microclimates Shape Rare Character',
-    category: 'terroir',
-    categoryLabel: 'Terroir & Sinharaja',
-    excerpt: 'Perched along the southern rim of Sri Lanka’s last viable primary tropical rainforest, discover why Crafted Leaves gardens enjoy an irreplaceable ecological microclimate.',
-    coverImage: '/images/hero-plantation-valley.jpg',
-    readTime: '5 min read',
-    publishedDate: 'October 28, 2026',
-    author: {
-      name: 'Crafted Leaves Botanical Team',
-      role: 'Agronomy & Environmental Stewards',
-      avatar: '/images/fresh-tea-leaves.jpg'
-    },
-    featured: false,
-    tags: ['Sinharaja', 'Terroir', 'Rainforest', 'Microclimate', 'Biodiversity'],
-    content: `
-### Where the Ancient Forest Meets the Tea Garden
+Withering aims to reduce the moisture content of the leaf, concentrate its juices and bring it to a rubbery condition in which it can be twisted without breaking into flakes. The raw leaf is fluffed and spread on racks or troughs in a well-lit, ventilated space for 18 to 24 hours. During this period, the leaf slowly loses moisture and undergoes physical and chemical changes essential to black tea manufacture. Over-withering can be damaging, so the process is closely monitored. Withering is complete when approximately two-thirds of the moisture in the raw leaf has evaporated.
 
-The character of tea is an imprint of the earth from which it rises. While the high elevation teas of Nuwara Eliya and Dimbula are renowned for brisk chill, **Southern Ceylon Low-Grown Tea** boasts an unmatched richness, color, and malty honey profile.
+### 5.3 Rolling and Roll Breaking
 
-The secret behind Crafted Leaves is our proximity to **Sinharaja Biosphere Reserve**, Sri Lanka's last remaining primary tropical lowland rainforest and a designated UNESCO World Heritage Site.
+The withered leaf is then ready for rolling. Modern rolling methods are mechanical developments of the original hand-rolling process, whose primary purpose was to wring juice from the leaf. As the leaf is rolled, it is twisted and gradually broken up. Leaf cells are ruptured, allowing their contents to come into contact with air and initiate the chemical changes required for black tea production.
 
----
+The broken and rolled leaf produced during this stage is called *dhool*. Roll breaking follows, with three main objectives: to remove twisted leaf that clogs circulation and restricts further twisting, to prevent over-fermentation of the dhool, and to cool the bulk when temperatures rise excessively during rolling.
 
-### Three Ecological Pillars of the Southern Border Terroir
+### 5.4 Fermentation (Aeration / Oxidation)
 
-#### 1. Tropical Rain Mist & Filtered Canopy Light
-Sinharaja creates its own persistent hydrological cycle. Dense cloud canopies form over the rainforest each afternoon, gently drifting across our estate valleys. This diffuse sunlight prevents harsh solar scorching, slowing down leaf maturation so that amino acids, catechins, and natural sugars concentrate inside the leaf tissue.
+Fermentation, also known as aeration or oxidation, is a critical stage during which important chemical reactions occur as air acts on the leaf tissue. The rolled, broken leaf is spread on tables and exposed for periods ranging from 20 minutes to five hours, depending on the desired final product and prevailing conditions.
 
-#### 2. Ancient Iron & Mineral Rich Clay
-The soils bordering the rainforest are undisturbed, rich in organic humus and deep lateritic clays infused with natural iron and silica. This mineral endowment gives southern Ceylon tea its signature dense liquor viscosity and luminous reddish-amber liquor.
+Freshly ruptured, unfermented tea liquor has a raw, green and sometimes metallic taste. During fermentation, complex changes take place that give the liquor a mellow character. As oxidation and condensation proceed, the liquor becomes more coloured and quality develops, but beyond a certain point quality begins to decline even as colour continues to increase. If fermentation is extended, the result is more colour but less quality; if shortened, there is less colour but more quality.
 
-#### 3. Native Pollinators & Companion Flora
-Wild bees, rare hornbills, and endemic butterflies migrate continually between the rainforest sanctuary and our tea gardens. Intercropped companion vegetation—including Ceylon cinnamon trees, wild lemongrass, and endemic canopy trees—provides natural pest balance, rendering artificial chemical pest controls completely unnecessary.
+![wide: Orthodox Black Tea Manufacturing Process: Plucking → Withering → Rolling → Fermentation → Firing](/blog-assets/orthodox-tea-manufacturing-process.jpg)
 
-> "When you sip Crafted Leaves, you are tasting centuries of forest rain, wild mountain honey, and the living breath of Ceylon's primary wilderness."
-`
-  },
-  {
-    id: 5,
-    slug: 'master-brewing-guide-for-artisanal-ceylon-tea-hot-and-cold',
-    title: 'The Connoisseur’s Brewing Guide: Unlocking the Peak Aromas of Artisanal Tea',
-    category: 'brewing',
-    categoryLabel: 'Master Brewing Guides',
-    excerpt: 'From ideal water mineral balance to temperature gradients and overnight cold brews, elevate your daily tea ceremony into a sensory ritual.',
-    coverImage: '/images/ceylon-golden-sunrise-teacup.jpg',
-    readTime: '6 min read',
-    publishedDate: 'October 24, 2026',
-    author: {
-      name: 'Bataganvila Master Craftsman',
-      role: 'Head of Tea Heritage, Crafted Leaves',
-      avatar: '/images/artisanal-tea-brew-cup.jpg'
-    },
-    featured: false,
-    tags: ['Brewing Guide', 'Water Quality', 'Cold Brew', 'Gongfu', 'Tea Tips'],
-    content: `
-### The Water That Awakens the Leaf
+Two perceptible changes occur during fermentation: one in colour and one in aroma. The most favourable point is generally considered to be when colour and aroma develop together. Under-aerated tea tastes raw and green, while over-aerated tea becomes soft and tasteless.
 
-Even the finest hand-rolled tea will fall flat if brewed carelessly. A cup of tea is 99% water; therefore, water quality, temperature, and leaf freedom are the three pillars of the connoisseur’s cup.
+### 5.5 Drying (Firing)
 
----
+Once the right degree of aeration has been achieved, the leaf is dried in a desiccator or firing chamber at approximately 99–104°C (210–220°F). The object of firing is to check fermentation by removing moisture, thereby preventing further chemical changes. This process shrinks and darkens the leaf, producing the finished product known as black tea. Firing converts the fermented leaf into a stable product and helps prevent deterioration.
 
-### Golden Rules of Artisanal Preparation
+### 5.6 Grading
 
-#### Rule 1: The Water Standard
-* Always use freshly drawn, filtered water or low-mineral natural spring water (Total Dissolved Solids between 50-120 ppm).
-* Never re-boil water that has already been boiled; re-boiling depletes dissolved oxygen, making the tea taste flat and dull.
+![right: Grades of Ceylon Tea - A Complete Guide to Understanding Quality](/blog-assets/grades-of-ceylon-tea.jpg)
 
-#### Rule 2: Leaf Freedom (No Constricting Balls)
-Handcrafted whole leaves (*such as our Wild Silver Tips and Handmade Pekoe*) need room to expand up to three times their dried size. Use spacious porcelain teapots, gaiwans, or wide stainless infusers rather than tiny metal tea balls.
+Grading is a crucial stage that can significantly affect the value of tea. Manufactured tea is separated into various shapes and sizes using mechanical sifters to meet trade requirements. Leaf grades contain the largest pieces, broken grades are progressively smaller, and the smallest grades are known as dust. Larger grades generally command higher auction prices, although particle size does not directly determine quality, it does, however, influence the colour and strength of the brew.
 
----
+Important grades include:
+* **Broken Orange Pekoe (B.O.P)**: Medium-sized broken leaves
+* **Flowery Broken Orange Pekoe (F.B.O.P)**: Broken leaf with golden tips
+* **Orange Pekoe (O.P)**: Long, wiry, whole leaves
+* **Broken Pekoe (B.P)**
+* **Flowery Pekoe (F.P)**
+* **Pekoe (P)**: Shorter, curly leaves
+* **Broken Orange Pekoe Fannings (B.O.P.F)**: Finer than BOP, almost powdery
+* **Flowery Broken Orange Pekoe Fannings (F.B.O.P.F)**: Flowery Broken Orange Pekoe Fannings
+* **Broken Pekoe Fannings (B.P.F)** and **Dust**
 
-### Temperature & Steeping Matrix
+These grades differ in leaf size, appearance, tip content and liquoring properties.
 
-| Tea Variety | Water Temp | Leaf Quantity | Steeping Time | Infusions |
-| :--- | :--- | :--- | :--- | :--- |
-| **Wild Silver Tips (White Tea)** | 75°C – 80°C (167°F - 176°F) | 3 grams per 200ml | 4 - 6 minutes | 3 to 4 times |
-| **Artisanal Golden Pekoe** | 90°C – 95°C (194°F - 203°F) | 2.5 grams per 200ml | 3 - 4 minutes | 2 to 3 times |
-| **Southern FBOP (Black Tea)** | 98°C – 100°C (208°F - 212°F) | 2 grams per 200ml | 2.5 - 3 minutes | 2 times |
-| **Artisanal Spiced Infusions** | 95°C – 100°C (203°F - 212°F) | 3 grams per 200ml | 4 - 5 minutes | 1 to 2 times |
+## 6. Tea Bags and CTC Manufacture
 
----
+In response to the growing global popularity of tea bags, Sri Lankan manufacturers introduced CTC processing for tea destined for bagging. Instead of traditional rolling, the withered leaf is processed through a CTC machine that cuts, tears and curls it into very small pieces. This fragmented leaf is ideal for tea bags because it infuses rapidly, producing a dark, strong brew suited to modern consumption patterns.
 
-### The Modern Luxury: Overnight Cold Brew
+## 7. Production, Marketing and Exports
 
-For a breathtakingly smooth summer beverage with zero bitterness, try our signature overnight cold brew:
+Tea production in Sri Lanka involves both plantation estates and smallholders. The plantation sector includes regional plantation companies that own estates, factories and labour forces. These estates process their own green leaf and may also purchase leaf from smallholders. Smallholders operate farms below 20.2 hectares, often relying on family labour or hired workers and supplying their leaf to bought-leaf factories.
 
-1. Place **10 grams of Crafted Leaves Silver Tips or Pekoe** into a 1-liter glass carafe.
-2. Fill with chilled, filtered water.
-3. Seal and refrigerate for **8 to 12 hours**.
-4. Strain over a single crystal ice cube with an optional sprig of fresh mint or a sliver of Ceylon cinnamon.
+Smallholders are concentrated mainly in low-country districts such as Ratnapura, Galle, Matara and Kalutara, while plantations are more common in high- and medium-elevation areas. The expansion of smallholdings was driven by rising international demand for low-grown tea and support from the state. Smallholders eventually became responsible for a major share of national production.
 
-The result is sweet, refreshing, with floral effervescence that surprises wine and tea lovers alike.
-`
+Sri Lanka mainly manufactures black tea, with orthodox tea accounting for the overwhelming share of production. CTC tea represents a smaller proportion, while green tea contributes less than one percent. This strong orientation toward orthodox manufacture has helped Sri Lanka maintain a distinctive position in the world market.
+
+The Colombo Tea Auction developed from modest beginnings into the world’s largest tea auction. Nearly all tea sold in Sri Lanka traditionally passes through this auction, although private and direct sales also occur. Low-grown teas account for the largest share of auction sales and have historically achieved strong prices, reflecting international demand for their colour, strength and appearance.
+
+Sri Lanka is strongly export-oriented, sending the great majority of its tea production overseas. It exports tea to more than 160 countries in bulk and value-added forms such as packets and tea bags. The Middle East and Russia have been among the most important markets, while Sri Lanka has retained a leading international position in orthodox tea even as other producing countries have expanded CTC manufacture.
+
+## 8. Conclusion
+
+Sri Lankan tea is the product of a close relationship between landscape, leaf and skilled manufacture. Elevation, climate and seasonal conditions shape the character of the green leaf, while careful plucking, withering, rolling, aeration, firing and grading help bring out its potential. The industry’s history, regional diversity and long-standing expertise in orthodox black tea have made Ceylon Tea distinctive in the global market. From the high-grown estates to the low-country smallholdings, every stage reflects the work of people who have adapted tea-making to the qualities of their land and leaf.
+
+## 9. References
+
+1. **Cheng, Q. (2019)**. *The classic of tea demystified* (L. Gang & G. Yanyan, Trans.). ISBN 978-7-109-26291-1.
+2. **Huda, H.-S.-A., Majid, N. B. A., Chen, Y., Adnan, M., Ashraf, S. A., Roszko, M., Bryła, M., Kieliszek, M., & Sasidharan, S. (2024)**. Exploring the ancient roots and modern global brews of tea and herbal beverages: A comprehensive review of origins, types, health benefits, market dynamics, and future trends. *Food Science & Nutrition*, 12(10), 6938–6955. [https://doi.org/10.1002/fsn3.4346](https://doi.org/10.1002/fsn3.4346)
+3. **Keegel, E. L. (1983)**. *Tea manufacture in Ceylon* (Monographs on Tea Production in Ceylon, No. 4). Tea Research Institute of Ceylon.
+4. **Sri Lanka Tea Board**. *Manufacturing*. Retrieved October 9, 2026, from [https://srilankateaboard.lk/ceylon-tea/fine-ceylon-tea/manufacturing/](https://srilankateaboard.lk/ceylon-tea/fine-ceylon-tea/manufacturing/)
+5. **Wambulwa, M. C., Meegahakumbura, M. K., Kamunya, S., & Wachira, F. N. (2021)**. From the wild to the cup: Tracking footprints of the tea species in time and space. *Frontiers in Nutrition*, 8, Article 706770. [https://doi.org/10.3389/fnut.2021.706770](https://doi.org/10.3389/fnut.2021.706770)`
   }
 ];
+
+

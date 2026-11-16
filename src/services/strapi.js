@@ -15,6 +15,10 @@ export function getStrapiMediaUrl(mediaObj) {
   if (url.startsWith('http://') || url.startsWith('https://')) {
     return url;
   }
+  // Local static public assets shouldn't be prefixed with Strapi base URL
+  if (url.startsWith('/images/') || url.startsWith('/blog-assets/')) {
+    return url;
+  }
   const cleanUrl = url.startsWith('/') ? url : `/${url}`;
   return `${STRAPI_BASE_URL}${cleanUrl}`;
 }
@@ -36,7 +40,9 @@ function normalizeStrapiArticle(item) {
     excerpt: attrs.excerpt || attrs.summary || '',
     content: attrs.content || attrs.body || '',
     coverImage: getStrapiMediaUrl(coverMedia) || '/images/tea-harvest.jpg',
-    readTime: attrs.readTime || `${attrs.readingTime || 5} min read`,
+    readTime: String(attrs.readTime || attrs.readingTime || '5 min read').includes('min')
+      ? String(attrs.readTime || attrs.readingTime)
+      : `${attrs.readingTime || 5} min read`,
     publishedDate: attrs.publishedAt
       ? new Date(attrs.publishedAt).toLocaleDateString('en-US', {
           year: 'numeric',

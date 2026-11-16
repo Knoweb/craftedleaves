@@ -286,7 +286,7 @@ export default function HomePage({ onNavigateToProducts, onNavigateToAbout, onNa
             )}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <div className={`grid gap-6 sm:gap-8 ${fallbackArticles.length === 1 ? 'max-w-md mx-auto' : 'grid-cols-1 md:grid-cols-3'}`}>
             {fallbackArticles.slice(0, 3).map((story) => (
               <article
                 key={story.id}
