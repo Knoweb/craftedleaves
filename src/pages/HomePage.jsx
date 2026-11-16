@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Compass, ChevronLeft, ChevronRight, Leaf } from 'lucide-react';
+import { ArrowRight, Compass, ChevronLeft, ChevronRight, Leaf, Clock, BookOpen } from 'lucide-react';
 import { homeContent, productCategories, signatureCraftContent } from '../data/content';
+import { fallbackArticles } from '../data/blogData';
 
-export default function HomePage({ onNavigateToProducts, onNavigateToAbout, onNavigateToContact }) {
+export default function HomePage({ onNavigateToProducts, onNavigateToAbout, onNavigateToContact, onNavigateToBlogs }) {
   // High-resolution Sri Lankan tea plantation, terroir & artisanal brew images that cycle smoothly
   const heroSlides = [
     {
@@ -261,6 +262,78 @@ export default function HomePage({ onNavigateToProducts, onNavigateToAbout, onNa
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Blogs & Insights Highlights */}
+      <section className="py-16 sm:py-20 bg-[#FCFAF7] border-b border-[#E2D7C3]/60">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+            <div>
+              <span className="text-xs font-semibold uppercase tracking-wider text-[#A8811A]">Blog & Insights</span>
+              <h2 className="text-2xl sm:text-4xl font-serif font-bold text-[#142F1C] mt-1">Blogs from the Tea Valleys</h2>
+              <p className="text-xs sm:text-sm text-[#616B62] mt-1">Explore traditional harvesting, pure Ceylon cinnamon, and the Sinharaja microclimate.</p>
+            </div>
+            {onNavigateToBlogs && (
+              <button
+                onClick={onNavigateToBlogs}
+                className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#C59B27] hover:text-[#142F1C] transition-colors cursor-pointer self-start sm:self-auto"
+              >
+                <span>Read All Blogs</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            )}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {fallbackArticles.slice(0, 3).map((story) => (
+              <article
+                key={story.id}
+                onClick={onNavigateToBlogs}
+                className="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E2D7C3] hover:border-[#C59B27]/70 shadow-sm hover:shadow-xl transition-all duration-500 cursor-pointer flex flex-col justify-between hover:-translate-y-1.5"
+              >
+                <div>
+                  <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-[#FAF8F3]">
+                    <img
+                      src={story.coverImage}
+                      alt={story.title}
+                      className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute top-3 left-3 bg-[#142F1C]/90 text-[#FAF2DA] text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border border-[#C59B27]/40 shadow-xs">
+                      {story.categoryLabel}
+                    </div>
+                  </div>
+
+                  <div className="p-5 sm:p-6 space-y-2">
+                    <div className="flex items-center gap-2 text-[11px] text-[#8A958C]">
+                      <Clock className="w-3 h-3 text-[#C59B27]" />
+                      <span>{story.readTime}</span>
+                      <span>•</span>
+                      <span>{story.publishedDate}</span>
+                    </div>
+
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-[#142F1C] leading-snug group-hover:text-[#255835] transition-colors line-clamp-2">
+                      {story.title}
+                    </h3>
+
+                    <p className="text-xs text-[#4C554D] leading-relaxed line-clamp-2">
+                      {story.excerpt}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="px-5 sm:px-6 pb-5 pt-3 border-t border-[#F0E8DC] flex items-center justify-between">
+                  <span className="text-[11px] font-semibold text-[#142F1C]">
+                    {story.author.name}
+                  </span>
+                  <span className="inline-flex items-center gap-1 text-xs font-bold text-[#C59B27] group-hover:text-[#142F1C] transition-colors">
+                    <span>Read</span>
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>

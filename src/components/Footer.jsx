@@ -10,6 +10,7 @@ export default function Footer({ onNavClick }) {
   const navItems = [
     { id: 'home', label: 'Home' },
     { id: 'products', label: 'Products' },
+    { id: 'blogs', label: 'Blogs' },
     { id: 'about', label: 'About Us' },
     { id: 'contact', label: 'Contact' },
   ];

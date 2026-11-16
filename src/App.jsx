@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
+import BlogPage from './pages/BlogPage';
+import BlogPostPage from './pages/BlogPostPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import Footer from './components/Footer';
@@ -11,9 +13,13 @@ import { companyInfo } from './data/content';
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
   const [inquiryProduct, setInquiryProduct] = useState('');
+  const [selectedArticleSlug, setSelectedArticleSlug] = useState(null);
 
   const handleTabChange = (tabId) => {
     setActiveTab(tabId);
+    if (tabId === 'blogs') {
+      setSelectedArticleSlug(null);
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -23,10 +29,16 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const handleSelectArticle = (slug) => {
+    setSelectedArticleSlug(slug);
+    setActiveTab('blogs');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-[#FCFAF7] text-[#242A24] font-sans selection:bg-[#2D5A34] selection:text-[#FAF2DA] flex flex-col justify-between">
       
-      {/* Sleek, Clean Header with only 4 essential tabs */}
+      {/* Sleek, Clean Header with navigation tabs */}
       <Navbar
         activeTab={activeTab}
         onTabChange={handleTabChange}
@@ -40,6 +52,7 @@ export default function App() {
             onNavigateToProducts={() => handleTabChange('products')}
             onNavigateToAbout={() => handleTabChange('about')}
             onNavigateToContact={() => handleTabChange('contact')}
+            onNavigateToBlogs={() => handleTabChange('blogs')}
           />
         )}
 
@@ -47,6 +60,25 @@ export default function App() {
           <ProductsPage
             onInquireProduct={handleProductInquire}
           />
+        )}
+
+        {activeTab === 'blogs' && (
+          selectedArticleSlug ? (
+            <BlogPostPage
+              slug={selectedArticleSlug}
+              onBack={() => {
+                setSelectedArticleSlug(null);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              onSelectArticle={handleSelectArticle}
+              onInquire={handleProductInquire}
+            />
+          ) : (
+            <BlogPage
+              onSelectArticle={handleSelectArticle}
+              onNavigateToContact={() => handleTabChange('contact')}
+            />
+          )
         )}
 
         {activeTab === 'about' && (
