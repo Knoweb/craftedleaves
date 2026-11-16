@@ -8,13 +8,15 @@ const STRAPI_BASE_URL = import.meta.env.VITE_STRAPI_URL || 'http://localhost:133
  */
 export function getStrapiMediaUrl(mediaObj) {
   if (!mediaObj) return null;
-  // Handle Strapi v4/v5 media structure
-  const url = mediaObj.url || mediaObj.data?.attributes?.url || mediaObj.attributes?.url;
+  const url = typeof mediaObj === 'string'
+    ? mediaObj
+    : (mediaObj.url || mediaObj.data?.attributes?.url || mediaObj.attributes?.url);
   if (!url) return null;
   if (url.startsWith('http://') || url.startsWith('https://')) {
     return url;
   }
-  return `${STRAPI_BASE_URL}${url}`;
+  const cleanUrl = url.startsWith('/') ? url : `/${url}`;
+  return `${STRAPI_BASE_URL}${cleanUrl}`;
 }
 
 /**
@@ -169,3 +171,4 @@ function filterFallbackArticles({ category = 'all', search = '' }) {
     isLiveStrapi: false
   };
 }
+

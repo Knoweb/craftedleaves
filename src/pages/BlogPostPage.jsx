@@ -12,7 +12,7 @@ import {
   Leaf, 
   RotateCw 
 } from 'lucide-react';
-import { getArticleBySlug, getArticles } from '../services/strapi';
+import { getArticleBySlug, getArticles, getStrapiMediaUrl } from '../services/strapi';
 
 export default function BlogPostPage({ slug, onBack, onSelectArticle, onInquire }) {
   const [article, setArticle] = useState(null);
@@ -145,22 +145,106 @@ export default function BlogPostPage({ slug, onBack, onSelectArticle, onInquire 
         continue;
       }
 
-      // Headings
+      // 1. Markdown Images: ![alt](url)
+      const imgMatch = line.match(/^!\[(.*?)\]\((.*?)\)$/);
+      if (imgMatch) {
+        const rawAlt = imgMatch[1] || '';
+        const rawUrl = imgMatch[2] || '';
+        const resolvedUrl = getStrapiMediaUrl(rawUrl);
+
+        const isRight = rawAlt.toLowerCase().includes('right') || rawAlt.toLowerCase().includes('side');
+        const isLeft = rawAlt.toLowerCase().includes('left');
+        const isFull = rawAlt.toLowerCase().includes('full') || rawAlt.toLowerCase().includes('wide');
+        const cleanAlt = rawAlt.replace(/^(right:|side:|left:|full:|wide:)\s*/i, '').trim();
+
+        if (isRight) {
+          // Wrapped float-right card for side-by-side text wrap (like editorial print)
+          elements.push(
+            <figure key={keyIdx++} className="my-4 md:float-right md:ml-6 md:mb-4 md:max-w-[280px] w-full bg-[#FAF8F3] rounded-2xl overflow-hidden border border-[#E2D7C3] shadow-md p-2">
+              <img
+                src={resolvedUrl}
+                alt={cleanAlt}
+                className="w-full h-auto rounded-xl object-cover hover:scale-102 transition-transform duration-300"
+                loading="lazy"
+              />
+              {cleanAlt && (
+                <figcaption className="pt-2 px-1 text-center text-[11px] font-serif italic text-[#616B62] leading-snug">
+                  {cleanAlt}
+                </figcaption>
+              )}
+            </figure>
+          );
+        } else if (isLeft) {
+          // Wrapped float-left card
+          elements.push(
+            <figure key={keyIdx++} className="my-4 md:float-left md:mr-6 md:mb-4 md:max-w-[280px] w-full bg-[#FAF8F3] rounded-2xl overflow-hidden border border-[#E2D7C3] shadow-md p-2">
+              <img
+                src={resolvedUrl}
+                alt={cleanAlt}
+                className="w-full h-auto rounded-xl object-cover hover:scale-102 transition-transform duration-300"
+                loading="lazy"
+              />
+              {cleanAlt && (
+                <figcaption className="pt-2 px-1 text-center text-[11px] font-serif italic text-[#616B62] leading-snug">
+                  {cleanAlt}
+                </figcaption>
+              )}
+            </figure>
+          );
+        } else if (isFull) {
+          // Full-width wide banner
+          elements.push(
+            <figure key={keyIdx++} className="clear-both my-8 rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E2D7C3] shadow-md bg-white">
+              <img
+                src={resolvedUrl}
+                alt={cleanAlt}
+                className="w-full h-auto max-h-[500px] object-cover"
+                loading="lazy"
+              />
+              {cleanAlt && (
+                <figcaption className="p-3.5 text-center text-xs font-serif italic text-[#616B62] bg-[#FAF8F3] border-t border-[#E2D7C3]/60">
+                  {cleanAlt}
+                </figcaption>
+              )}
+            </figure>
+          );
+        } else {
+          // Standard Editorial Image (centered with elegant border and caption)
+          elements.push(
+            <figure key={keyIdx++} className="my-6 sm:my-8 bg-[#FAF8F3] rounded-2xl overflow-hidden border border-[#E2D7C3] shadow-sm p-2 sm:p-2.5 max-w-lg mx-auto">
+              <img
+                src={resolvedUrl}
+                alt={cleanAlt}
+                className="w-full h-auto rounded-xl object-cover"
+                loading="lazy"
+              />
+              {cleanAlt && (
+                <figcaption className="pt-2 px-1 text-center text-xs font-serif italic text-[#616B62] leading-snug">
+                  {cleanAlt}
+                </figcaption>
+              )}
+            </figure>
+          );
+        }
+        continue;
+      }
+
+      // Headings (with clear-both to keep layout pristine)
       if (line.startsWith('### ')) {
         elements.push(
-          <h3 key={keyIdx++} className="font-serif text-xl sm:text-2xl font-bold text-[#142F1C] pt-6 pb-2 border-b border-[#F0E8DC]">
+          <h3 key={keyIdx++} className="clear-both font-serif text-xl sm:text-2xl font-bold text-[#142F1C] pt-6 pb-2 border-b border-[#F0E8DC]">
             {line.replace('### ', '')}
           </h3>
         );
       } else if (line.startsWith('## ')) {
         elements.push(
-          <h2 key={keyIdx++} className="font-serif text-2xl sm:text-3xl font-bold text-[#142F1C] pt-8 pb-3">
+          <h2 key={keyIdx++} className="clear-both font-serif text-2xl sm:text-3xl font-bold text-[#142F1C] pt-8 pb-3">
             {line.replace('## ', '')}
           </h2>
         );
       } else if (line.startsWith('#### ')) {
         elements.push(
-          <h4 key={keyIdx++} className="font-serif text-lg sm:text-xl font-bold text-[#255835] pt-4">
+          <h4 key={keyIdx++} className="clear-both font-serif text-lg sm:text-xl font-bold text-[#255835] pt-4">
             {line.replace('#### ', '')}
           </h4>
         );
